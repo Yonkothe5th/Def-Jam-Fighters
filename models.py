@@ -26,34 +26,33 @@ class Fighter(Base):
             f'bio={self.bio}'
     
 class Skill(Base):
-    pass
-    # __tablename__ = "skills"
+    __tablename__ = "skills"
     
-    # id= Column(Integer(),primary_key = True)
-    # name = Column(String())
-    # description = Column(String())
-    # fighter_id= Column(Integer(),ForeignKey('fighters.id'))
-    # fighter = relationship('Fighter',back_populates='skills')
+    id= Column(Integer(),primary_key = True)
+    name = Column(String())
+    description = Column(String())
+    fighter_id= Column(Integer(),ForeignKey('fighters.id'))
+    fighter = relationship('Fighter',back_populates='skills')
     
-    # def __repr__(self):
-    #     return f'Skill(id={self.id})' + \
-    #         f'name= {self.name}'+ \
-    #         f'description = {self.description})' + \
-    #         f'fighter_id={self.fighter_id}'
+    def __repr__(self):
+        return f'Skill(id={self.id})' + \
+            f'name= {self.name}'+ \
+            f'description = {self.description})' + \
+            f'fighter_id={self.fighter_id}'
 
 
 class Arena (Base):
-    pass
-    # __tablename__ = "arenas"
     
-    # id = Column(Integer(),primary_key=True)
-    # skill_id = Column(Integer(),ForeignKey('skill.id'))
+    __tablename__ = "arenas"
     
-    # skill=relationship('Skill', 
-        # backref=backref('arenas',uselist = False))
+    id = Column(Integer(),primary_key=True)
+    skill_id = Column(Integer(),ForeignKey('skill.id'))
+    
+    skill=relationship('Skill', 
+        backref=backref('arenas',uselist = False))
         
         
-    # def __repr__(self):
-    #     return f'Arena(id={self.id})' + \
-    #         f'name= {self.name}'+ \
-    #         f'skill_id={self.skill_id}'
+    def __repr__(self):
+        return f'Arena(id={self.id})' + \
+            f'name= {self.name}'+ \
+            f'skill_id={self.skill_id}'
