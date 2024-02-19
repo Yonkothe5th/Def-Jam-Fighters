@@ -28,7 +28,7 @@ if __name__ == "__main__":
     am = Skill (name = "Amnesia", description= "Confused enemy temporarily", fighter = lk, arena=ct) 
     mt = Skill(name = 'Midas Touch' ,description = "Turns enemy into gold temporarily", figther= me, arena=msg)
     inf = Skill (name = 'Infereno', description = 'boosts all abilities for 10s', fighter = sd, arena = rs)
-    sm = Skill (name ='Slow-Motion' description = "slows down time temporarily", fighter= lk arena= cw)
+    sm = Skill (name ='Slow-Motion', description = "slows down time temporarily", fighter= lk, arena = cw)
     session.add_all([hp,ds,am,mt,inf,sm])
     session.commit
     
