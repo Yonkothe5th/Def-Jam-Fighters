@@ -3,13 +3,13 @@ from sqlalchemy import ForeignKey, Table, Column, Integer, String, DateTime, Met
 from sqlalchemy.orm import relationship, backref
 from sqlalchemy.ext.declarative import declarative_base
 
-
 engine = create_engine('sqlite:///fighters.db')
 
 Base = declarative_base()
 
 
 class Fighter(Base):
+    
     __tablename__ = "fighters"
     
     id= Column(Integer(),primary_key= True)
@@ -24,7 +24,7 @@ class Fighter(Base):
             f'name= {self.name}'+ \
             f'gender= {self.gender})' + \
             f'bio={self.bio}'
-    
+
 class Skill(Base):
     __tablename__ = "skills"
     
@@ -32,25 +32,25 @@ class Skill(Base):
     name = Column(String())
     description = Column(String())
     fighter_id= Column(Integer(),ForeignKey('fighters.id'))
-    fighter = relationship('Fighter',back_populates='skills')
+    arenas = relationship ('Arena',backref='skill')
+
     
     def __repr__(self):
         return f'Skill(id={self.id})' + \
             f'name= {self.name}'+ \
             f'description = {self.description})' + \
             f'fighter_id={self.fighter_id}'
-
-
+            
 class Arena (Base):
     
     __tablename__ = "arenas"
     
     id = Column(Integer(),primary_key=True)
-    skill_id = Column(Integer(),ForeignKey('skill.id'))
-    
-    skill=relationship('Skill', 
-        backref=backref('arenas',uselist = False))
-        
+    name = Column(Integer())
+    skill_id = Column(Integer(), ForeignKey("skills.id"))
+
+    order = relationship('Skill',
+        backref=backref('skill', uselist=False))
         
     def __repr__(self):
         return f'Arena(id={self.id})' + \

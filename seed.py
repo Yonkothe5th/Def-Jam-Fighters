@@ -23,18 +23,18 @@ if __name__ == "__main__":
     session.commit
     
     #skills data
-    hp = Skill(name='Health Points', description= "reduces damage taken", fighter = dmx, arena=td)
-    ds = Skill (name='Speed Points' ,description= "increases speed", fighter = sd, arena=dp)
-    am = Skill (name = "Amnesia", description= "Confused enemy temporarily", fighter = lk, arena=ct) 
-    mt = Skill(name = 'Midas Touch' ,description = "Turns enemy into gold temporarily", figther= me, arena=msg)
-    inf = Skill (name = 'Infereno', description = 'boosts all abilities for 10s', fighter = sd, arena = rs)
-    sm = Skill (name ='Slow-Motion', description = "slows down time temporarily", fighter= lk, arena = cw)
+    hp = Skill(name='Health Points', description= "reduces damage taken", fighter = dmx)
+    ds = Skill (name='Speed Points' ,description= "increases speed", fighter = sd)
+    am = Skill (name = "Amnesia", description= "Confused enemy temporarily", fighter = lk) 
+    mt = Skill(name = 'Midas Touch' ,description = "Turns enemy into gold temporarily", fighter= me)
+    inf = Skill (name = 'Infereno', description = 'boosts all abilities for 10s', fighter = sd)
+    sm = Skill (name ='Slow-Motion', description = "slows down time temporarily", fighter= lk)
     session.add_all([hp,ds,am,mt,inf,sm])
     session.commit
     
     #Arena data 
     td = Arena (name='Thunder dome',skill =hp)
-    dp = Arena (name='Dog Pound',skill =hp)
+    dp = Arena (name='Dog Pound',skill =ds)
     ct = Arena (name='China Town',skill= am)
     msg = Arena (name='Maddison Square Garden',skill= mt)
     rs = Arena (name = 'Recording Studio', skill= inf )
