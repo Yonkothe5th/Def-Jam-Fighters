@@ -110,6 +110,21 @@ def change_skill_arena(skill_name, new_arena_name):
         click.echo('Skill or arena not found.')
         
     main_menu()
+    
+@cli.command()
+@click.option('--fighter_name', prompt='Enter fighter name to delete')
+def delete_fighter(fighter_name):
+    fighter = session.query(Fighter).filter_by(name=fighter_name).first()
+
+    if fighter:
+        session.delete(fighter)
+        session.commit()
+        click.echo(f'Fighter "{fighter_name}" deleted successfully.')
+    else:
+        click.echo('Fighter not found.')
+
+    main_menu()
+
 
 
 def print_main_menu():
@@ -123,13 +138,14 @@ def print_main_menu():
     click.echo("7. Show Fighters and Their Skills")
     click.echo("8. Change Fighter's Skill")
     click.echo("9. Change Skill's Arena")
+    click.echo ("10. Eliminate a Fighter")
     click.echo("0. Exit")
 
 @cli.command()
 def main_menu():
     while True:
         print_main_menu()
-        choice = click.prompt('Pick your Bane(0-9)', type=int)
+        choice = click.prompt('Pick your Bane(0-10)', type=int)
         
         if choice == 0:
             click.echo('Game Over!')
@@ -152,6 +168,8 @@ def main_menu():
             change_fighter_skill()
         elif choice == 9:
             change_skill_arena()
+        elif choice == 10:
+            delete_fighter() 
         else:
             click.echo('Stay within Bounds')
 
