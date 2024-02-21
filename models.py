@@ -49,7 +49,7 @@ class Arena (Base):
     name = Column(Integer())
     skill_id = Column(Integer(), ForeignKey("skills.id"))
 
-   
+
         
     def __repr__(self):
         return f'Arena(id={self.id})' + \
