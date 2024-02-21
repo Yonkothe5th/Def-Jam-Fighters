@@ -31,7 +31,7 @@ if __name__ == "__main__":
     
     #skills data
     hp = Skill(name='Health Points', description= "reduces damage taken", fighter = dmx)
-    ds = Skill (name='Speed Points' ,description= "increases speed", fighter = sd)
+    ds = Skill (name='Dash' ,description= "increases speed", fighter = sd)
     am = Skill (name = "Amnesia", description= "Confused enemy temporarily", fighter = lk) 
     mt = Skill(name = 'Midas Touch' ,description = "Turns enemy into gold temporarily", fighter= me)
     inf = Skill (name = 'Infereno', description = 'boosts all abilities for 10s', fighter = sd)
