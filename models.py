@@ -49,8 +49,7 @@ class Arena (Base):
     name = Column(Integer())
     skill_id = Column(Integer(), ForeignKey("skills.id"))
 
-    order = relationship('Skill',
-        backref=backref('skill', uselist=False))
+   
         
     def __repr__(self):
         return f'Arena(id={self.id})' + \

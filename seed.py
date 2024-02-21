@@ -12,6 +12,13 @@ if __name__ == "__main__":
     Session = sessionmaker (bind=engine)
     session = Session()
     
+    #clear data before running the seed data
+    
+    session.query(Fighter).delete()
+    session.query(Skill).delete()
+    session.query(Arena).delete()
+    session.commit()    
+    
     #fighters seed data
     sd = Fighter (name= 'Snoop Dogg', gender = 'M', bio = 'Known to put enemies in a spliff')
     dmx = Fighter (name= 'DMX', gender = 'M', bio = 'He secretly knows who let the dogs out')
