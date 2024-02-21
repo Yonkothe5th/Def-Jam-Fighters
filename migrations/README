@@ -1,1 +1,95 @@
-Generic single-database configuration.
+# CLI Fighter Arena Management
+
+This CLI application allows you to manage fighters, skills, and arenas for a fighting game. You can perform various actions, such as adding fighters, skills, and arenas, displaying information, and making changes to fighters' skills and skills' arenas.
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.x
+- SQLite (for the provided database)
+-SQLalchemy 
+
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Yonkothe5th/Def-Jam-Fighters
+Change into the project directory:
+
+
+cd Def-Jam-Fighters
+Install the required dependencies:
+
+in your shell 
+pip install -r requirements.txt
+
+Run the application:
+python command.py
+
+Usage
+The application provides a command-line interface with various commands to manage fighters, skills, and arenas. The main menu allows you to choose actions interactively.
+
+
+python command.py
+Available Commands
+
+# List Fighters:
+bash
+python command.py list_fighters
+
+# List Skills:
+bash
+python command.py list_skills
+
+# List Arenas:
+bash
+python command.py list_arenas
+
+# Add Fighter:
+bash
+python command.py add_fighter
+Follow the prompts to enter the fighter details.
+
+# Add Skill:
+bash
+python command.py add_skill
+Follow the prompts to enter the skill details.
+
+# Add Arena:
+bash
+python command.py add_arena
+Follow the prompts to enter the arena details.
+
+
+# Display Fighters and Their Skills:
+bash
+python command.py display_fighters_skills
+
+# Change Fighter's Skill:
+bash
+python command.py change_fighter_skill
+Follow the prompts to enter the fighter and new skill details.
+
+# Change Skill's Arena:
+bash
+python command.py change_skill_arena
+Follow the prompts to enter the skill and new arena details.
+
+# Exit:
+Exits the program.
+
+Contributing
+If you would like to contribute to this project, please open an issue or submit a pull request.
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+
+
+
+
+
+
